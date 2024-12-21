@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ChangePassword = () => {
+export default function PasswordChange() {
   const [form, setForm] = useState({
     password: "",
     newPassword: "",
@@ -27,14 +27,15 @@ export const ChangePassword = () => {
   };
 
   return (
-    <div className="container p-8 rounded-xl bg-[#EFEEFF] mx-48">
+    <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-8">Change Password</h1>
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-6">
-        {/* Grid for Inputs */} 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 items-center">
-          {/* Current Password */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-6 items-start">
           <div>
-            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-1">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 text-sm font-bold mb-1"
+            >
               Current Password
             </label>
             <input
@@ -46,12 +47,17 @@ export const ChangePassword = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            {error.password && <p className="text-red-500 text-xs mt-1">{error.password}</p>}
+            {error.password && (
+              <p className="text-red-500 text-xs mt-1">{error.password}</p>
+            )}
           </div>
 
           {/* New Password */}
-          <div >
-            <label htmlFor="newPassword" className="block text-gray-700 text-sm font-bold mb-1">
+          <div>
+            <label
+              htmlFor="newPassword"
+              className="block text-gray-700 text-sm font-bold mb-1"
+            >
               New Password
             </label>
             <input
@@ -63,7 +69,9 @@ export const ChangePassword = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            {error.newPassword && <p className="text-red-500 text-xs mt-1">{error.newPassword}</p>}
+            {error.newPassword && (
+              <p className="text-red-500 text-xs mt-1">{error.newPassword}</p>
+            )}
           </div>
 
           {/* Confirm New Password */}
@@ -84,7 +92,9 @@ export const ChangePassword = () => {
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             {error.confirmPassword && (
-              <p className="text-red-500 text-xs mt-1">{error.confirmPassword}</p>
+              <p className="text-red-500 text-xs mt-1">
+                {error.confirmPassword}
+              </p>
             )}
           </div>
         </div>
