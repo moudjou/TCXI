@@ -5,6 +5,7 @@ import Profile from "./pages/employee/Profile";
 import Holidays from "./pages/employee/Holidays";
 import NotificationPage from "./pages/employee/Notification";
 import Absences from "./pages/employee/Absentees";
+import TasksPage from "./pages/employee/Tasks";
 function App() {
   return (
     <Routes>
@@ -12,7 +13,8 @@ function App() {
       <Route path="/profile" element={<Profile />}/>
       <Route path="/holidays" element={<Holidays />}/>
       <Route path="/notification" element={<NotificationPage />} />
-      <Route path="/absentees" element={<Absences />}/>
+      <Route path="/absentees" element={<Absences />} />
+      <Route path="/tasks" element={<TasksPage />} />
     </Routes>
   );
 }
