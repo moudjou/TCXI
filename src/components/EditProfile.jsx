@@ -85,10 +85,10 @@ export default function EditProfile() {
               alt="Profile"
               className={`${
                 isEditable ? "opacity-80" : ""
-              } w-24 h-24 `}
+              } w-24 h-24 rounded-xl`}
             />
             {isEditable && (
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-full cursor-pointer group-hover:opacity-100 transition-opacity">
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-xl cursor-pointer group-hover:opacity-100 transition-opacity">
                 <label
                   htmlFor="file-input"
                   className="text-white font-semibold text-sm"
