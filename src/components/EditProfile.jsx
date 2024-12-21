@@ -75,7 +75,7 @@ export default function EditProfile() {
   };
 
   return (
-    <div className="flex flex-col px-6 gap-y-4">
+    <div className="flex flex-col px-6 gap-y-4 mt-5">
       <h2 className="font-bold">My Profile</h2>
       <div className="flex justify-between">
         <div className="flex gap-x-4">
@@ -85,7 +85,7 @@ export default function EditProfile() {
               alt="Profile"
               className={`${
                 isEditable ? "opacity-80" : ""
-              } w-24 h-24 rounded-full`}
+              } w-24 h-24 `}
             />
             {isEditable && (
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-full cursor-pointer group-hover:opacity-100 transition-opacity">
@@ -111,9 +111,16 @@ export default function EditProfile() {
           </div>
         </div>
         {isEditable ? (
-          <div className="flex gap-x-4">
-            <button onClick={handleEditClick}>CANCEL</button>
-            <button>Save</button>
+          <div className="flex gap-x-4 items-center">
+            <button
+              onClick={handleEditClick}
+              className="text-[#534FEB] px-8 rounded-xl h-10"
+            >
+              CANCEL
+            </button>
+            <button className="bg-[#534FEB] text-white px-8 rounded-xl h-10">
+              Save
+            </button>
           </div>
         ) : (
           <button onClick={handleEditClick} className="text-[#534FEB]">
