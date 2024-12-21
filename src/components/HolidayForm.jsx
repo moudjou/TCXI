@@ -42,7 +42,7 @@ const VacationForm = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md w-full h-full"> 
+    <div className="bg-white p-8 rounded-lg  w-full h-full"> 
       <h1 className="text-2xl font-bold mb-6">My Holiday</h1>
           <form onSubmit={handleSubmit} >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

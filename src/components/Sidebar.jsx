@@ -18,7 +18,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <nav className="flex flex-col h-screen w-60 justify-around p-4">
+    <nav className="flex flex-col h-screen w-60 justify-around p-4 ">
       <div className="flex flex-col gap-2">
         {menuItems.map((item, index) => (
           <NavLink
