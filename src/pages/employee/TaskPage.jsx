@@ -2,6 +2,7 @@ import Details from "../../components/Details";
 import Header from "../../components/Header";
 import Search from "../../components/Search";
 import Sidebar from "../../components/Sidebar";
+import Task from "../../components/Task";
 export default function TasksPage() {
   return (
     <div className="flex">

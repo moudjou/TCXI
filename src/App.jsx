@@ -5,7 +5,7 @@ import Profile from "./pages/employee/Profile";
 import Holidays from "./pages/employee/Holidays";
 import NotificationPage from "./pages/employee/Notification";
 import Absences from "./pages/employee/Absentees";
-import TasksPage from "./pages/employee/Tasks";
+import TasksPage from "./pages/employee/TaskPage";
 function App() {
   return (
     <Routes>

@@ -9,9 +9,9 @@ export default function Sidebar() {
     { name: "Dashboard", icon: "/dashboard-square-01.svg", link: "/" },
     { name: "My Profile", icon: "/user-group.svg", link: "/profile" },
     {
-      name: "My Performance",
+      name: "My Absentees",
       icon: "/chart-evaluation.svg",
-      link: "/performance",
+      link: "/absentees",
     },
     { name: "My Tasks", icon: "/file-01.svg", link: "/tasks" },
     { name: "My Holidays", icon: "/file-02.svg", link: "/holidays" },
