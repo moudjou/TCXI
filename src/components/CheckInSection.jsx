@@ -28,7 +28,7 @@ export default function CheckList() {
 
           {/* Status */}
           <div className="flex items-center space-x-2">
-            <img src="../../public/Group.svg" alt="Checked Icon" className="w-5 h-5" />
+            <img src="/Group.svg" alt="Checked Icon" className="w-5 h-5" />
             <span className="text-sm font-semibold text-green-600">{e.status}</span>
           </div>
         </div>

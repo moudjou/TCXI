@@ -9,6 +9,8 @@ import TasksPage from "./pages/employee/TaskPage";
 import CheckIn from "./pages/Admin/CheckInTracking";
 import ResetPasswordPage from "./components/ResetPassword";
 import LoginPage from "./components/LoginForm";
+import ProfileAdmin from "./pages/Admin/Profile";
+import AddEmployee from "./pages/Admin/AddNewEmpolyee";
 function App() {
   return (
     <Routes>
@@ -20,7 +22,10 @@ function App() {
       <Route path="/absentees" element={<Absences />} />
       <Route path="/tasks" element={<TasksPage />} />
       <Route path="/check-in" element={<CheckIn />} />
+      <Route path="/admin-profile" element={<ProfileAdmin />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
+      <Route path="/add-employee" element={<AddEmployee />} />
+      
       
     </Routes>
   );

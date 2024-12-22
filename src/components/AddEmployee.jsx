@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Settings from "./Settings";
+import PasswordChange from "./PasswordChange"; // Import the ChangePassword component
 
-export default function EditProfile() {
+export default function NewProfile() {
   const [isEditable, setIsEditable] = useState(false);
   const [profileImage, setProfileImage] = useState("/Rectangle 40.png");
 
@@ -19,15 +20,14 @@ export default function EditProfile() {
 
   return (
     <div className="flex flex-col px-6 gap-y-4 mt-5">
-      <h2 className="font-bold">My Profile</h2>
+      <h2 className="font-bold">Create New Employee Profile</h2>
       <div className="flex justify-between">
         <div className="flex gap-x-4">
           <div className="relative group">
             <img
               src={profileImage}
               alt="Profile"
-              className={`${
-                isEditable ? "opacity-80" : ""
+              className={`${isEditable ? "opacity-80" : ""
               } w-24 h-24 rounded-xl`}
             />
             {isEditable && (
@@ -48,10 +48,7 @@ export default function EditProfile() {
               </div>
             )}
           </div>
-          <div className="flex flex-col justify-center font-bold">
-            <h3>LAMRI MERIEM</h3>
-            <h3>IT Department Comanager</h3>
-          </div>
+          
         </div>
         {isEditable ? (
           <div className="flex gap-x-4 items-center">
@@ -67,11 +64,16 @@ export default function EditProfile() {
           </div>
         ) : (
           <button onClick={handleEditClick} className="text-[#534FEB]">
-            Edit Profile
+            Create New Profile 
           </button>
         )}
       </div>
+
+      {/* Render Settings component */}
       <Settings isEditable={isEditable} />
+
+      {/* Render PasswordChange component only when isEditable is true */}
+      {isEditable && <PasswordChange />}
     </div>
   );
 }

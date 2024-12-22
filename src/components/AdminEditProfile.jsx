@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Settings from "./Settings";
+import PasswordChange from "./PasswordChange"; // Import the ChangePassword component
 
 export default function EditProfile() {
   const [isEditable, setIsEditable] = useState(false);
@@ -26,8 +27,7 @@ export default function EditProfile() {
             <img
               src={profileImage}
               alt="Profile"
-              className={`${
-                isEditable ? "opacity-80" : ""
+              className={`${isEditable ? "opacity-80" : ""
               } w-24 h-24 rounded-xl`}
             />
             {isEditable && (
@@ -71,7 +71,12 @@ export default function EditProfile() {
           </button>
         )}
       </div>
+
+      {/* Render Settings component */}
       <Settings isEditable={isEditable} />
+
+      {/* Render PasswordChange component only when isEditable is true */}
+      {isEditable && <PasswordChange />}
     </div>
   );
 }

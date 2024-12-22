@@ -42,7 +42,7 @@ export default function PasswordChange() {
               type="password"
               id="password"
               name="password"
-              placeholder="Enter your current password"
+              placeholder="Enter password"
               value={form.password}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -52,27 +52,8 @@ export default function PasswordChange() {
             )}
           </div>
 
-          {/* New Password */}
-          <div>
-            <label
-              htmlFor="newPassword"
-              className="block text-gray-700 text-sm font-bold mb-1"
-            >
-              New Password
-            </label>
-            <input
-              type="password"
-              id="newPassword"
-              name="newPassword"
-              placeholder="Enter your new password"
-              value={form.newPassword}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-            {error.newPassword && (
-              <p className="text-red-500 text-xs mt-1">{error.newPassword}</p>
-            )}
-          </div>
+    
+          
 
           {/* Confirm New Password */}
           <div className="row-span-2">
@@ -80,7 +61,7 @@ export default function PasswordChange() {
               htmlFor="confirmPassword"
               className="block text-gray-700 text-sm font-bold mb-1"
             >
-              Confirm New Password
+              Confirm Password
             </label>
             <input
               type="password"

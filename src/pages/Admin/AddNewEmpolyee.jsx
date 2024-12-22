@@ -1,13 +1,14 @@
 import Sidebar from "../../components/SidebarAdmin";
 import Header from "../../components/Header";
-import EditProfile from "../../components/AdminEditProfile";
-export default function ProfileAdmin() {
+import NewProfile from "../../components/AddEmployee";
+export default function AddEmployee() {
   return (
-    <div className="flex">
+    <div className="flex ">
       <Sidebar />
       <div className="flex flex-col w-screen">
-        <Header />
-        <EditProfile />
+              <Header />
+              
+        <NewProfile />
       </div>
     </div>
   );
