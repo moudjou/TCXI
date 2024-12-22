@@ -11,6 +11,7 @@ import ResetPasswordPage from "./components/ResetPassword";
 import LoginPage from "./components/LoginForm";
 import ProfileAdmin from "./pages/Admin/Profile";
 import AddEmployee from "./pages/Admin/AddNewEmpolyee";
+import FaceRecognition from "./pages/Admin/FacialRecognition";
 function App() {
   return (
     <Routes>
@@ -25,6 +26,8 @@ function App() {
       <Route path="/admin-profile" element={<ProfileAdmin />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/add-employee" element={<AddEmployee />} />
+      <Route path="/face-id" element={<FaceRecognition />} />
+      
       
       
     </Routes>

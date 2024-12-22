@@ -6,9 +6,9 @@ export default function Sidebar() {
   const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
 
   const menuItems = [
-    { name: "My Profile", icon: "/user-group.svg", link: "/profile" },
+    { name: "My Profile", icon: "/user-group.svg", link: "/admin-profile" },
     { name: "Check in tracking", icon: "/ei_check.svg", link: "/check-in" },
-    { name: "Facial Recognition", icon: "/face_id.svg", link: "/facial-recognition" },
+    { name: "Facial Recognition", icon: "/face_id.svg", link: "/face-id" },
     { name: "Add an employee", icon: "/add.svg", link: "/add-employee" },
   ];
 
