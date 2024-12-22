@@ -18,7 +18,7 @@ export default function Sidebar() {
 
   const handleLogoutConfirm = () => {
     // Handle the logout action (e.g., clear session, redirect to login page)
-    window.location.href = "/logout"; // Example redirect
+    window.location.href = "/login"; // Example redirect
   };
 
   const handleModalClose = () => {
