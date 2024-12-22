@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const LoginPage = () => {
+const ResetPasswordPage = () => {
   const [form, setForm] = useState({
-    email: "",
-    password: ""
+    password: "",
+    confirmPassword: ""
   });
 
   const [error, setError] = useState({});
@@ -23,27 +23,30 @@ const LoginPage = () => {
 
     // Basic validation
     const errors = {};
-    if (!form.email) {
-      errors.email = "Email is required";
-    }
     if (!form.password) {
       errors.password = "Password is required";
     } else if (form.password.length < 8) {
       errors.password = "Password must be at least 8 characters";
     }
 
+    if (!form.confirmPassword) {
+      errors.confirmPassword = "Confirm Password is required";
+    } else if (form.password !== form.confirmPassword) {
+      errors.confirmPassword = "Passwords do not match";
+    }
+
     setError(errors);
 
     if (Object.keys(errors).length === 0) {
       // Proceed with form submission (e.g., API call)
-      console.log("Form submitted", form);
+      console.log("Password reset successfully", form);
     }
   };
 
   return (
     <div className="min-h-screen flex">
       {/* Left Section */}
-    <div
+     <div
   className="flex-1 bg-custom-gradient text-white flex flex-col justify-center items-center"
 >
   <div className="text-center max-w-md">
@@ -62,37 +65,21 @@ const LoginPage = () => {
     </button>
   </div>
 </div>
+
       {/* Right Section */}
       <div className="flex-1 flex flex-col justify-center items-center bg-white">
         <div className="w-full max-w-md px-8">
           <h2 className="text-4xl font-bold mb-6 text-left drop-shadow-md">
-            Welcome Back
+            Reset Password
           </h2>
 
           <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Example@email.com"
-                className="w-full border border-gray-300 bg-gray-100 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
-              {submitted && error.email && (
-                <p className="text-red-500 text-xs mt-1">{error.email}</p>
-              )}
-            </div>
             <div className="mb-4">
               <label
                 htmlFor="password"
                 className="block text-sm font-medium mb-1"
               >
-                Password
+                New Password
               </label>
               <input
                 type="password"
@@ -107,16 +94,33 @@ const LoginPage = () => {
                 <p className="text-red-500 text-xs mt-1">{error.password}</p>
               )}
             </div>
-            <div className="flex justify-between items-center mb-6">
-              <a href="#" className="text-sm text-blue-500 hover:underline">
-                Forgot Password?
-              </a>
+            <div className="mb-4">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium mb-1"
+              >
+                Confirm New Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                placeholder="Re-enter new password"
+                className="w-full border border-gray-300 bg-gray-100 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+              {submitted && error.confirmPassword && (
+                <p className="text-red-500 text-xs mt-1">
+                  {error.confirmPassword}
+                </p>
+              )}
             </div>
             <button
               type="submit"
               className="w-full bg-[#534feb] text-white py-2 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Log in
+              Reset Password
             </button>
           </form>
           <p className="text-sm text-gray-500 mt-6 text-center">
@@ -128,4 +132,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ResetPasswordPage;
