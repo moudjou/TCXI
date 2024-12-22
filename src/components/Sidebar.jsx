@@ -9,65 +9,73 @@ export default function Sidebar() {
     { name: "Dashboard", icon: "/dashboard-square-01.svg", link: "/" },
     { name: "My Profile", icon: "/user-group.svg", link: "/profile" },
     {
-      name: "My Performance",
+      name: "My Absentees",
       icon: "/chart-evaluation.svg",
-      link: "/performance",
+      link: "/absentees",
     },
     { name: "My Tasks", icon: "/file-01.svg", link: "/tasks" },
     { name: "My Holidays", icon: "/file-02.svg", link: "/holidays" },
     {
       name: "My Feedback",
       icon: "/information-circle.svg",
-      link: "#", // No navigation, just open the popup
+      link: "#",
       action: () => setFeedbackPopupOpen(true), // Open popup on click
     },
   ];
 
   return (
     <>
-      <nav className="flex flex-col h-screen w-60 justify-around p-4">
-        <div className="flex flex-col gap-2">
-          {menuItems.map((item, index) => (
-            <NavLink
-              to={item.link}
-              key={index}
-              onClick={item.action || null} // Handle feedback popup action
-              className={`flex items-center gap-3 p-2 rounded ${
-                location.pathname === item.link
-                  ? "bg-[#534FEB] text-white rounded"
-                  : "hover:bg-gray-200 rounded"
-              }`}
-            >
-              <img
-                src={item.icon}
-                alt={`${item.name} Icon`}
-                className="w-6 h-6"
-              />
-              <span>{item.name}</span>
-            </NavLink>
-          ))}
-        </div>
+      <nav className="flex flex-col h-screen w-60 justify-around p-4 bg-[#F8FBFF] max-md:w-fit max-md:fixed">
+        <div>
+          <div className="flex justify-center">
+            <img
+              src="/logo violet 1.svg"
+              alt="Logo"
+              className="w-32 h-auto mb-1"
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            {menuItems.map((item, index) => (
+              <NavLink
+                to={item.link}
+                key={index}
+                onClick={item.action || null}
+                className={`flex items-center p-2 rounded ${
+                  location.pathname === item.link
+                    ? "bg-[#534FEB] text-white rounded"
+                    : "hover:bg-gray-200 rounded"
+                }`}
+              >
+                <img
+                  src={item.icon}
+                  alt={`${item.name} Icon`}
+                  className="w-6 h-6 max-md:self-center "
+                />
+                <span className="max-md:hidden max-lg:hidden">{item.name}</span>
+              </NavLink>
+            ))}
+          </div>
 
-        <div className="flex flex-col">
-          <img
-            src="/Group 653.svg"
-            alt="Thoughts Icon"
-            className="self-center h-20"
-          />
-          <div className="flex flex-col px-4 py-2 rounded-lg shadow-md items-center">
-            <h3 className="text-sm font-semibold text-gray-800">
-              Thoughts Time
-            </h3>
-            <p className="text-xs text-gray-500 mt-2">
-              We don’t have any notice for you, till then you can share your
-              thoughts with your peers.
-            </p>
-            <button className="mt-3 text-purple-600 text-sm font-medium">
-              Write a message
-            </button>
+          <div className="flex flex-col">
+            <img
+              src="/Group 653.svg"
+              alt="Thoughts Icon"
+              className="self-center h-20 max-md:hidden max-lg:hidden"
+            />
+            <div className="flex flex-col px-4 py-2 rounded-lg shadow-md items-center ">
+              <h3 className="text-sm font-semibold text-gray-800 max-md:hidden ">
+                Thoughts Time
+              </h3>
+              <p className="text-xs text-gray-500 mt-2 max-md:hidden max-lg:hidden">
+                We don’t have any notice for you, till then you can share your
+                thoughts with your peers.
+              </p>
+              <button className="mt-3 text-purple-600 text-sm font-medium">
+                Write a message
+              </button>
+            </div>
           </div>
         </div>
-
         <div>
           <NavLink
             className={`flex items-center gap-3 p-2 rounded ${
@@ -77,7 +85,7 @@ export default function Sidebar() {
             }`}
           >
             <img src="/logout-03.svg" alt="Logout Icon" className="w-6 h-6" />
-            <span>Logout</span>
+            <span className="max-md:hidden max-lg:hidden">Logout</span>
           </NavLink>
         </div>
       </nav>
@@ -109,3 +117,4 @@ export default function Sidebar() {
     </>
   );
 }
+

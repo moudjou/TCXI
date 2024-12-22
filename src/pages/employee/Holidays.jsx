@@ -5,11 +5,10 @@ export default function Holidays() {
   return (
     <div className="flex ">
       <Sidebar />
-      
-      <div className="flex flex-col w-screen">
-        <Header />
-        <VacationForm className="w-full min-h-screen"/>
 
+      <div className="flex flex-col w-screen max-md:ml-60">
+        <Header />
+        <VacationForm className="w-full min-h-screen" />
       </div>
     </div>
   );
