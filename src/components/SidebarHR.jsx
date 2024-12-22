@@ -1,4 +1,4 @@
-// import React from "react";
+import { useState } from "react";// import React from "react";
 // import { NavLink } from "react-router-dom";
 
 // export default function SidebarHR() {
@@ -77,6 +77,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function SidebarHR() {
+   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuItems = [
     { name: "Dashboard", icon: "/dashboard-square-01.svg", link: "/hr" },
     {
@@ -105,6 +106,19 @@ export default function SidebarHR() {
       link: "/assigned",
     },
   ];
+  
+  const handleLogoutClick = () => {
+    setIsModalOpen(true); // Open modal on logout button click
+  };
+
+  const handleLogoutConfirm = () => {
+    // Handle the logout action (e.g., clear session, redirect to login page)
+    window.location.href = "/login"; // Example redirect
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false); // Close the modal
+  };
   return (
     <>
       <nav className="flex flex-col h-screen w-60 justify-between p-4 bg-[#F8FBFF]">
@@ -147,10 +161,39 @@ export default function SidebarHR() {
                 : "hover:bg-gray-200 rounded"
             }`}
           >
-            <img src="/logout-03.svg" alt="Logout Icon" className="w-6 h-6" />
-            <span>Logout</span>
+                  <div>
+        <button
+          onClick={handleLogoutClick}
+          className="flex items-center gap-3 p-2 rounded-md h-12 hover:bg-gray-200"
+        >
+          <img src="/logout-03.svg" alt="Logout Icon" className="w-6 h-6" />
+          <span>Logout</span>
+        </button>
+      </div>
+            
           </NavLink>
         </div>
+         {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 z-10">
+          <div className="bg-white p-6 rounded-md w-1/3">
+            <h3 className="text-xl font-semibold mb-4">Are you sure you want to log out?</h3>
+            <div className="flex justify-end gap-4">
+              <button
+                onClick={handleModalClose}
+                className="bg-gray-300 px-4 py-2 rounded-md"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleLogoutConfirm}
+                className="bg-red-500 text-white px-4 py-2 rounded-md"
+              >
+                Yes, Log Out
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       </nav>
     </>
   );
