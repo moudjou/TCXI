@@ -43,7 +43,7 @@ export default function Details({ text, color }) {
         ))}
       </div>
       {isMoreThanTwo && location.pathname !== "/tasks" && (
-        <button className="text-sm text-[#787486] mt-4 self-end">
+        <button className="text-sm text-[#787486] mt-4 self-end max-md:self-start max-lg:self-start">
           Show more {">"}
         </button>
       )}

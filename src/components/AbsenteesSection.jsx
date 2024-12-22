@@ -17,14 +17,18 @@ const MyAbsentees = () => {
         {absentees.map((absentee, index) => (
           <div
             key={index}
-            className="flex justify-between items-center border rounded-lg p-4 shadow-sm"
+            className="flex justify-between items-center border rounded-lg p-4 shadow-sm max-md:ml-60 max-sm:ml-60"
           >
             <div className="flex-1 flex items-center">
-              <p className="text-sm font-medium text-gray-700 mr-2">Employee:</p>
+              <p className="text-sm font-medium text-gray-700 mr-2">
+                Employee:
+              </p>
               <p className="text-gray-800">{absentee.employee}</p>
             </div>
             <div className="flex-1 flex items-center">
-              <p className="text-sm font-medium text-gray-700 mr-2">Date of absence:</p>
+              <p className="text-sm font-medium text-gray-700 mr-2">
+                Date of absence:
+              </p>
               <p className="text-gray-800">{absentee.date}</p>
             </div>
           </div>

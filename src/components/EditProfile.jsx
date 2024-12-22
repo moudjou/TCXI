@@ -18,7 +18,7 @@ export default function EditProfile() {
   };
 
   return (
-    <div className="flex flex-col px-6 gap-y-4 mt-5">
+    <div className="flex flex-col px-6 gap-y-4 mt-5 max-md:ml-60">
       <h2 className="font-bold">My Profile</h2>
       <div className="flex justify-between">
         <div className="flex gap-x-4">
@@ -48,7 +48,7 @@ export default function EditProfile() {
               </div>
             )}
           </div>
-          <div className="flex flex-col justify-center font-bold">
+          <div className="flex flex-col justify-center font-bold max-sm:flex-row">
             <h3>LAMRI MERIEM</h3>
             <h3>IT Department Comanager</h3>
           </div>
